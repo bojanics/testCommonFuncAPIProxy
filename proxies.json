@@ -1,60 +1,18 @@
 {
     "$schema": "http://json.schemastore.org/proxies",
     "proxies": {
-        "ete_v1_Form('formname_formversion')_formoperation": {
+        "sasatestcommonfuncapiproxy": {
             "matchCondition": {
-                "route": "/ete/v1/Form('{formname}/{formversion}')/{formoperation}",
-                "methods": ["GET", "OPTIONS"]
+                "route": "/",
+                "methods": ["GET"]
             },
-            "backendUri": "https://prod-06.southeastasia.logic.azure.com/workflows/6b90bd57acb54abd9a39f2e171dda2f6/triggers/manual/paths/invoke/ete/v1/Form//{formname}/{formversion}/{formoperation}/{request.method}?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zQPHEZoPAhEHBa_cqc-UQGgxwxNGCQHk7Q0MHdzOboU",
+            "backendUri": "https://prod-63.westeurope.logic.azure.com:443/workflows/4e7da2a7f92a47f7b8283fb7592fecbf/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2O_j56esjMShwECEAbhb9igSnV3HWlSPk3quzNSNCSg",
             "requestOverrides": {
-                "backend.request.method": "GET",
-                "backend.request.headers.environment_project": "%ENVIRONMENT_PROJECT%",
-                "backend.request.headers.environment_devops": "%ENVIRONMENT_DEVOPS%",
-                "backend.request.headers.environment_lane": "%ENVIRONMENT_LANE%",
-                "backend.request.headers.environment_type": "%ENVIRONMENT_TYPE%",
-                "backend.request.headers.environment_appl": "%ENVIRONMENT_APPL%",
-                "backend.request.headers.environment_speed": "%ENVIRONMENT_SPEED%",
-                "backend.request.headers.environment_region": "%ENVIRONMENT_REGION%",
-                "backend.request.headers.environment_slot": "%ENVIRONMENT_SLOT%",
-                "backend.request.headers.environment_step": "%ENVIRONMENT_STEP%",
-                "backend.request.headers.Authorization": "",
-                "backend.request.headers.static_cdn_endpoint_forms_url": "%STATIC_CDN_ENDPOINT_FORMS_URL%"
+                "backend.request.method": "GET"
             },
             "responseOverrides": {
-                "response.statusCode": "{backend.response.headers.ReturnCode}",
-                "response.headers.Access-Control-Allow-Credentials": "true",
-                "response.headers.Access-Control-Allow-Origin": "{backend.request.headers.Origin}",
-                "response.headers.Access-Control-Allow-Methods": "GET, OPTIONS"
+                "response.statusCode": "{backend.response.headers.ReturnCode}"
             }
-        },
-        "ete_v1_Ressource_ressoperation": {
-            "matchCondition": {
-                "route": "/ete/v1/Resource/{resoperation}"
-            },
-            "backendUri": "https://prod-01.southeastasia.logic.azure.com/workflows/aba4e121d78041449dbdd345dfb29758/triggers/manual/paths/invoke/ete/v1/Resource/{resoperation}?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hdyESSAD55HE7zn_-mjzZGEpQybaaAW0fj3nRmecFtE",
-            "requestOverrides": {
-                "backend.request.method": "POST",
-                "backend.request.headers.environment_project": "%ENVIRONMENT_PROJECT%",
-                "backend.request.headers.environment_devops": "%ENVIRONMENT_DEVOPS%",
-                "backend.request.headers.environment_lane": "%ENVIRONMENT_LANE%",
-                "backend.request.headers.environment_type": "%ENVIRONMENT_TYPE%",
-                "backend.request.headers.environment_appl": "%ENVIRONMENT_APPL%",
-                "backend.request.headers.environment_speed": "%ENVIRONMENT_SPEED%",
-                "backend.request.headers.environment_region": "%ENVIRONMENT_REGION%",
-                "backend.request.headers.environment_slot": "%ENVIRONMENT_SLOT%",
-                "backend.request.headers.environment_step": "%ENVIRONMENT_STEP%",
-                "backend.request.headers.Authorization": "",
-                "backend.request.headers.static_cdn_endpoint_forms_url": "%STATIC_CDN_ENDPOINT_FORMS_URL%"
-                
-            },
-            "responseOverrides": {
-                "response.headers.Access-Control-Allow-Credentials": "true",
-                "response.headers.Access-Control-Allow-Origin": "{backend.request.headers.Origin}",
-                "response.headers.Access-Control-Allow-Methods": "GET, OPTIONS, POST"
-
-            }
-
-        }
+        }        
     }
 }
