@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "sasatestcommonfuncapiproxy": {
+            "matchCondition": {
+                "route": "/",
+                "methods": ["GET"]
+            },
+            "backendUri": "https://prod-63.westeurope.logic.azure.com:443/workflows/4e7da2a7f92a47f7b8283fb7592fecbf/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2O_j56esjMShwECEAbhb9igSnV3HWlSPk3quzNSNCSg",
+            "requestOverrides": {
+                "backend.request.method": "GET"
+            },
+            "responseOverrides": {
+                "response.statusCode": "{backend.response.headers.ReturnCode}"
+            }
+        }        
+    }
+}
